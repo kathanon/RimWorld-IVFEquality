@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>kathanon_IVFEquality_ExtractSample</defName>
+    <label>extract sperm sample for IVF</label>
+    <description>Extract a sperm sample into a test tube. It can then be used to fertilize an ovum, or for an insemination.</description>
+    <jobString>extracting sperm sample from TargetA.</jobString>
+    <workerClass>IVFEquality.Recipe_ExtractSample</workerClass>
+    <addsHediff>kathanon_IVFEquality_SampleExtracted</addsHediff>
+    <surgeryOutcomeEffect IsNull="True"/>
+    <anesthetize>false</anesthetize>
+    <genderPrerequisite>Male</genderPrerequisite>
+    <mustBeFertile>true</mustBeFertile>
+    <allowedForQuestLodgers>false</allowedForQuestLodgers>
+    <minAllowedAge>16</minAllowedAge>
+    <incompatibleWithHediffTags><li>kathanon_IVFEquality_SampleExtracted</li></incompatibleWithHediffTags>
+    <uiIconThing>kathanon_IVFEquality_SpermSample</uiIconThing>
+    <workAmount>100</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <isViolation>true</isViolation>
+    <targetsBodyPart>false</targetsBodyPart>
+    <researchPrerequisites>
+      <li>FertilityProcedures</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef ParentName="FertilitySurgery">
+    <defName>kathanon_IVFEquality_Insemination</defName>
+    <label>insemination</label>
+    <description>Inseminate a prospective mother with an extracted sperm sample to attempt to begin a pregnancy.</description>
+    <jobString>Inseminating TargetA.</jobString>
+    <workerClass>IVFEquality.Recipe_Insemination</workerClass>
+    <anesthetize>false</anesthetize>
+    <genderPrerequisite>Female</genderPrerequisite>
+    <mustBeFertile>true</mustBeFertile>
+    <surgerySuccessChanceFactor>8</surgerySuccessChanceFactor>
+    <uiIconThing>kathanon_IVFEquality_SpermSample</uiIconThing>
+  </RecipeDef>
+
+  <HediffDef>
+    <defName>kathanon_IVFEquality_SampleExtracted</defName>
+    <label>sperm sample extracted</label>
+    <description>This man recently underwent a sperm extraction procedure. No more sperm can be extracted until some time has passed.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>20000</disappearsAfterTicks><!-- 8 h -->
+      </li>
+    </comps>
+    <tags>
+      <li>kathanon_IVFEquality_SampleExtracted</li>
+    </tags>
+  </HediffDef>
+
+  <WorkGiverDef>
+    <defName>kathanon_IVFEquality_FertilizeOvumWithSample</defName>
+    <label>fertilize ovum with sperm sample</label>
+    <giverClass>IVFEquality.JobGiver_FertilizeOvumWithSample</giverClass>
+    <workType>Doctor</workType>
+    <priorityInType>12</priorityInType>
+    <verb>fertilize ovum with sperm sample</verb>
+    <gerund>fertilizing ovum with sperm sample</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <JobDef>
+    <defName>kathanon_IVFEquality_FertilizeOvumWithSample</defName>
+    <driverClass>IVFEquality.JobDriver_FertilizeOvumWithSample</driverClass>
+    <reportString>fertilizing TargetA with TargetB.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <ThingDef>
+    <defName>kathanon_IVFEquality_SpermSample</defName>
+    <label>sperm sample</label>
+    <description>A human sperm sample in a test tube. Can be used to fertilize an ovum for implantation into a mother, or for an insemination.</description>
+    <thingClass>IVFEquality.SpermSample</thingClass>
+    <graphicData>
+      <texPath>kathanon.IVFEquality/Sample</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>50</MarketValue>
+      <Mass>0.5</Mass>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <stackLimit>10</stackLimit>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <category>Item</category>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <rotatable>false</rotatable>
+    <pathCost>14</pathCost>
+    <tickerType>Rare</tickerType>
+    <comps>
+      <li Class="CompProperties_HasPawnSources"/>
+      <li Class="CompProperties_Rottable">
+        <rotDamagePerDay>12.5</rotDamagePerDay>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,18 @@
+<ModMetaData>
+	<name>IVF Equality</name>
+	<author>kathanon</author>
+    <packageId>kathanon.IVFEquality</packageId>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<description>Adds "extract sperm sample" as a male version of "extract ovum". Samples can be used to fertilize an extracted ovum.</description><!--, or to inseminate a pawn-->
+	<url>https://github.com/kathanon/RimWorld-IVFEquality</url>
+
+	<modDependencies>
+		<li>
+			<packageId>Ludeon.RimWorld.Biotech</packageId>
+			<displayName>Biotech</displayName>
+			<!--<steamAppId>1826140</steamAppId>-->
+		</li>
+	</modDependencies>
+</ModMetaData>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<kathanon.IVFEquality.InseminationLabel>Inseminate...</kathanon.IVFEquality.InseminationLabel>
+	<kathanon.IVFEquality.InseminationDesc>Choose a woman to be inseminated with this sperm sample for a chance at pregnancy. The biological parents of the resulting child will be the inseminated woman and man who provided the sperm sample.</kathanon.IVFEquality.InseminationDesc>
+	<kathanon.IVFEquality.InseminationOperation>Inseminate with {0}</kathanon.IVFEquality.InseminationOperation>
+	<kathanon.IVFEquality.InseminationFailed>Impregnating {0} with {1} did not succeed.</kathanon.IVFEquality.InseminationFailed>
+	<kathanon.IVFEquality.CancelInsemination>Cancel insemination for {0}</kathanon.IVFEquality.CancelInsemination>
+	<kathanon.IVFEquality.InseminationChanceConfirm>The success chance for inseminating {0} with {1} is {2}.\n\nThe success chance is dependent on the fertility of the biological parents. It will be lower if the either is too old or too young.</kathanon.IVFEquality.InseminationChanceConfirm>
+	<kathanon.IVFEquality.InseminationBothConfirm>The success chance for inseminating {0} with {1} is {2}.\n\nThe success chance is dependent on the fertility of the biological parents. It will be lower if the either is too old or too young.\n\n{3} is {0}'s {4}. If the insemination succeeds, there's a {5} chance that the resulting baby will have genetic abnormalities due to inbreeding.\n\nAre you sure you want to continue?</kathanon.IVFEquality.InseminationBothConfirm >
+	<kathanon.IVFEquality.CancelInsemination>Cancel insemination for {0}</kathanon.IVFEquality.CancelInsemination>
+	<kathanon.IVFEquality.FertilizeLabel>Fertilize ovum...</kathanon.IVFEquality.FertilizeLabel>
+	<kathanon.IVFEquality.FertilizeDesc>Choose an ovum to be fertilized with this sperm sample, to create an embryo. The embryo can then be implanted in a mother to start a pregnancy, or in a growth vat. The biological parents of the resulting child will be the woman who provided the ovum and the man who provided the sperm sample.</kathanon.IVFEquality.FertilizeDesc>
+	<kathanon.IVFEquality.CancelFertilization>Cancel fertilization of {0}</kathanon.IVFEquality.CancelFertilization>
+	<kathanon.IVFEquality.FertilizeWithLabel>Fertilize with...</kathanon.IVFEquality.FertilizeWithLabel>
+	<kathanon.IVFEquality.FertilizeWithDesc>Choose a sperm sample to fertilize this ovum with, to create an embryo. The embryo can then be implanted in a mother to start a pregnancy, or in a growth vat. The biological parents of the resulting child will be the woman who provided the ovum and the man who provided the sperm sample.</kathanon.IVFEquality.FertilizeWithDesc>
+	<kathanon.IVFEquality.CancelFertilizationWith>Cancel fertilization with {0}</kathanon.IVFEquality.CancelFertilizationWith>
+	<kathanon.IVFEquality.RecentlyExtracted>sample recently extracted</kathanon.IVFEquality.RecentlyExtracted>
+	<kathanon.IVFEquality.NoTargets>No women that can be inseminated by this sample.</kathanon.IVFEquality.NoTargets>
+</LanguageData>
