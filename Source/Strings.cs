@@ -20,6 +20,17 @@ namespace IVFEquality {
         public static readonly string RecentlyExtracted  = (ID + ".RecentlyExtracted" ).Translate();
         public static readonly string NoTargets          = (ID + ".NoTargets"         ).Translate();
 
+        public static readonly string Ovum         = (ID + ".Ovum"        ).Translate();
+        public static readonly string Sperm        = (ID + ".Sperm"       ).Translate();
+        public static readonly string WhatToFarm   = (ID + ".WhatToFarm"  ).Translate();
+        public static readonly string Hemogen      = (ID + ".Hemogen"     ).Translate();
+        public static readonly string Genes        = (ID + ".Genes"       ).Translate();
+        public static readonly string FarmLabel    = (ID + ".FarmLabel"   ).Translate();
+        public static readonly string FarmDesc     = (ID + ".FarmDesc"    ).Translate();
+        public static readonly string CheckLabel   = (ID + ".CheckLabel"  ).Translate();
+        public static readonly string DefaultLabel = (ID + ".DefaultLabel").Translate();
+        public static readonly string OvumOrSperm  = (ID + ".OvumOrSperm" ).Translate();
+
         public static string CancelInsemination(Pawn target) 
             => CancelInseminationKey.Translate(target.LabelShort);
         private const string CancelInseminationKey = ID + ".CancelInsemination";

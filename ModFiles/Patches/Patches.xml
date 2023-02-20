@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   
-  <Operation Class="PatchOperationAdd">
+  <Operation Class="PatchOperationAdd" MayRequire="ludeon.rimworld.biotech">
     <xpath>Defs/ThingDef[defName="Human"]/recipes</xpath>
     <value>
       <li MayRequire="Ludeon.RimWorld.Biotech">kathanon_IVFEquality_ExtractSample</li>
     </value>
   </Operation>
   
-  <Operation Class="PatchOperationAdd">
+  <Operation Class="PatchOperationAdd" MayRequire="ludeon.rimworld.biotech">
     <xpath>Defs/ThingDef[defName="HumanOvum"]/comps</xpath>
     <value>
       <li>
         <compClass>IVFEquality.FertilizeWithComp</compClass>
       </li>
     </value>
+  </Operation>
+  
+  <Operation Class="PatchOperationRemove" MayRequire="ludeon.rimworld.biotech">
+    <xpath>Defs/PrisonerInteractionModeDef[defName="HemogenFarm"]/hideOnHemogenicPawns</xpath>
   </Operation>
   
 </Patch>

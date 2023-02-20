@@ -7,7 +7,6 @@
 	<kathanon.IVFEquality.CancelInsemination>Cancel insemination for {0}</kathanon.IVFEquality.CancelInsemination>
 	<kathanon.IVFEquality.InseminationChanceConfirm>The success chance for inseminating {0} with {1} is {2}.\n\nThe success chance is dependent on the fertility of the biological parents. It will be lower if the either is too old or too young.</kathanon.IVFEquality.InseminationChanceConfirm>
 	<kathanon.IVFEquality.InseminationBothConfirm>The success chance for inseminating {0} with {1} is {2}.\n\nThe success chance is dependent on the fertility of the biological parents. It will be lower if the either is too old or too young.\n\n{3} is {0}'s {4}. If the insemination succeeds, there's a {5} chance that the resulting baby will have genetic abnormalities due to inbreeding.\n\nAre you sure you want to continue?</kathanon.IVFEquality.InseminationBothConfirm >
-	<kathanon.IVFEquality.CancelInsemination>Cancel insemination for {0}</kathanon.IVFEquality.CancelInsemination>
 	<kathanon.IVFEquality.FertilizeLabel>Fertilize ovum...</kathanon.IVFEquality.FertilizeLabel>
 	<kathanon.IVFEquality.FertilizeDesc>Choose an ovum to be fertilized with this sperm sample, to create an embryo. The embryo can then be implanted in a mother to start a pregnancy, or in a growth vat. The biological parents of the resulting child will be the woman who provided the ovum and the man who provided the sperm sample.</kathanon.IVFEquality.FertilizeDesc>
 	<kathanon.IVFEquality.CancelFertilization>Cancel fertilization of {0}</kathanon.IVFEquality.CancelFertilization>
@@ -16,4 +15,15 @@
 	<kathanon.IVFEquality.CancelFertilizationWith>Cancel fertilization with {0}</kathanon.IVFEquality.CancelFertilizationWith>
 	<kathanon.IVFEquality.RecentlyExtracted>sample recently extracted</kathanon.IVFEquality.RecentlyExtracted>
 	<kathanon.IVFEquality.NoTargets>No women that can be inseminated by this sample.</kathanon.IVFEquality.NoTargets>
+
+    <kathanon.IVFEquality.Ovum>Ovum</kathanon.IVFEquality.Ovum>
+    <kathanon.IVFEquality.Sperm>Sperm</kathanon.IVFEquality.Sperm>
+    <kathanon.IVFEquality.WhatToFarm>What to farm:</kathanon.IVFEquality.WhatToFarm>
+    <kathanon.IVFEquality.Hemogen>Hemogen</kathanon.IVFEquality.Hemogen>
+    <kathanon.IVFEquality.Genes>Genes</kathanon.IVFEquality.Genes>
+    <kathanon.IVFEquality.FarmLabel>Farm</kathanon.IVFEquality.FarmLabel>
+    <kathanon.IVFEquality.FarmDesc>Automatically schedule extraction of hemogen, genes and/or ovum or sperm when available, as selected.</kathanon.IVFEquality.FarmDesc>
+    <kathanon.IVFEquality.CheckLabel>Expand hemogen farming to include genes and/or ovum/sperm</kathanon.IVFEquality.CheckLabel>
+    <kathanon.IVFEquality.DefaultLabel>Default farm settings:</kathanon.IVFEquality.DefaultLabel>
+    <kathanon.IVFEquality.OvumOrSperm>Ovum/sperm</kathanon.IVFEquality.OvumOrSperm>
 </LanguageData>

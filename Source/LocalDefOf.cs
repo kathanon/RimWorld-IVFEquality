@@ -9,19 +9,22 @@ using Verse;
 namespace IVFEquality;
 [DefOf]
 public static class LoadDefOf {
-    [MayRequireRoyalty]
+    [MayRequireBiotech]
     public static RecipeDef kathanon_IVFEquality_ExtractSample;
 
-    [MayRequireRoyalty]
+    [MayRequireBiotech]
     public static RecipeDef kathanon_IVFEquality_Insemination;
 
-    [MayRequireRoyalty]
+    [MayRequireBiotech]
+    public static RecipeDef ExtractOvum;
+
+    [MayRequireBiotech]
     public static HediffDef kathanon_IVFEquality_SampleExtracted;
 
-    [MayRequireRoyalty]
+    [MayRequireBiotech]
     public static JobDef kathanon_IVFEquality_FertilizeOvumWithSample;
 
-    [MayRequireRoyalty]
+    [MayRequireBiotech]
     public static ThingDef kathanon_IVFEquality_SpermSample;
 
     static LoadDefOf() {
@@ -33,6 +36,8 @@ public static class LocalDefOf {
     public static readonly RecipeDef ExtractSample = LoadDefOf.kathanon_IVFEquality_ExtractSample;
 
     public static readonly RecipeDef Insemination = LoadDefOf.kathanon_IVFEquality_Insemination;
+
+    public static readonly RecipeDef ExtractOvum = LoadDefOf.ExtractOvum;
 
     public static readonly HediffDef SampleExtracted = LoadDefOf.kathanon_IVFEquality_SampleExtracted;
 
