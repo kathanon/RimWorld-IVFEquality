@@ -12,6 +12,13 @@ namespace IVFEquality;
 public class FarmState {
     private static readonly ConditionalWeakTable<Pawn, FarmState> table = new();
 
+    private const float NumbersSize    = 30f;
+    private const float NumbersCheck   = 16f;
+    private const float NumbersStep    = 20f;
+    private const float NumbersXMargin = -2f;
+    private const float NumbersYMargin = (NumbersSize - NumbersCheck) / 2;
+    public  const int   NumbersWidth   = 3 * (int) NumbersStep;
+
     private static readonly RecipeDef[][] recipeDefs = {
         new RecipeDef[] {},
         new RecipeDef[] { RecipeDefOf.ExtractHemogenPack },
@@ -60,10 +67,27 @@ public class FarmState {
         if (pre != var) onChange(var);
     }
 
+    public void DoNumbersChecks(ref float x, bool disabled) {
+        string ovumSperm = pawn.gender == Gender.Female ? Strings.Ovum : Strings.Sperm;
+        DoNumbersCheck(ref x, disabled, ref hemogen,     Strings.Hemogen, UpdateHemogen);
+        DoNumbersCheck(ref x, disabled, ref genes,       Strings.Genes,   UpdateGenes);
+        DoNumbersCheck(ref x, disabled, ref ovumOrSperm, ovumSperm,       UpdateOvumOrSperm);
+    }
+
+    private void DoNumbersCheck(ref float x, bool disabled, ref bool var, string tip, Action<bool> onChange) {
+        bool pre = var;
+        var area = new Rect(x, 0f, NumbersStep, NumbersSize);
+        Widgets.Checkbox(new(x + NumbersXMargin, NumbersYMargin), ref var, NumbersCheck, disabled, paintable: true);
+        TooltipHandler.TipRegion(area, tip);
+        x += NumbersStep;
+        if (pre != var) onChange(var);
+    }
+
     private RecipeDef OvumOrSpermRecipe 
         => pawn.gender == Gender.Female ? LocalDefOf.ExtractOvum : LocalDefOf.ExtractSample;
 
-    private void UpdateRecipe(RecipeDef def, bool add, Func<bool> check = null) {
+    private void UpdateRecipe(RecipeDef def, bool add, Func<bool> check = null, ResearchProjectDef research = null) {
+        if (!(research?.IsFinished ?? true)) return;
         check ??= () => true;
         var stack = pawn.BillStack.Bills;
         var bill = stack.FirstOrDefault(x => x.recipe == def);
@@ -84,8 +108,8 @@ public class FarmState {
     private void UpdateHemogen(bool add) 
         => UpdateRecipe(RecipeDefOf.ExtractHemogenPack, add, HasNoBleed);
 
-    private bool HasNoBleed() 
-        => !pawn.health.hediffSet.HasHediff(HediffDefOf.BloodLoss);
+    private void UpdateOvumOrSperm(bool add) 
+        => UpdateRecipe(OvumOrSpermRecipe, add, research: LocalDefOf.FertilityProcedures);
 
     private void UpdateGenes(bool add) {
         var extractors = pawn.Map.listerThings
@@ -109,8 +133,8 @@ public class FarmState {
         }
     }
 
-    private void UpdateOvumOrSperm(bool add) 
-        => UpdateRecipe(OvumOrSpermRecipe, add);
+    private bool HasNoBleed() 
+        => !pawn.health.hediffSet.HasHediff(HediffDefOf.BloodLoss);
 
     public void ChangeFrom() 
         => Update(false);

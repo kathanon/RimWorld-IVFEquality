@@ -19,6 +19,9 @@ public static class LoadDefOf {
     public static RecipeDef ExtractOvum;
 
     [MayRequireBiotech]
+    public static ResearchProjectDef FertilityProcedures;
+
+    [MayRequireBiotech]
     public static HediffDef kathanon_IVFEquality_SampleExtracted;
 
     [MayRequireBiotech]
@@ -38,6 +41,8 @@ public static class LocalDefOf {
     public static readonly RecipeDef Insemination = LoadDefOf.kathanon_IVFEquality_Insemination;
 
     public static readonly RecipeDef ExtractOvum = LoadDefOf.ExtractOvum;
+
+    public static readonly ResearchProjectDef FertilityProcedures = LoadDefOf.FertilityProcedures;
 
     public static readonly HediffDef SampleExtracted = LoadDefOf.kathanon_IVFEquality_SampleExtracted;
 

@@ -60,6 +60,7 @@
   <!-- Project files -->
   <ItemGroup>
     <Compile Include="Command_TargetWithMenu.cs" />
+    <Compile Include="Compat_Numbers.cs" />
     <Compile Include="FarmState.cs" />
     <Compile Include="FertilizeWithComp.cs" />
     <Compile Include="JobGiver_FertilizeOvumWithSample.cs" />
